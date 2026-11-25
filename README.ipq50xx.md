@@ -65,8 +65,8 @@ README).
 
 Ready images are on the [Releases page](https://github.com/kuncy7/openwrt-nss-edma/releases),
 one release per build, tagged `ipq50xx-YYYY.MM.DD` (a second build on the same day
-gets `-2`). The newest three are kept; older ones go away together with their
-kernel module repository, see below.
+gets `-2`). The newest five are kept. Their kernel module repositories stay
+longer, for the newest eight builds, see below.
 
 **Sysupgrade images only.** Flash `openwrt-qualcommax-ipq50xx-<device>-squashfs-sysupgrade.bin`
 over a running OpenWrt, from LuCI or with `sysupgrade`. There is no factory
@@ -150,7 +150,8 @@ these images is not the official one, so the official `kmods` feed cannot
 serve them (`apk` says "no such package"). After a sysupgrade to a newer
 release, run `apk update` and install the modules again; they come from the
 new release's repository, which the new image already lists. A repository
-stays online as long as its release does.
+stays online for the newest eight builds, three builds longer than its
+release.
 
 ## Quick start
 
@@ -698,7 +699,7 @@ The board side is small. The parts, in order of effort:
    offloaded, see its notes below).
    Straight from the DTS, untested on the trunk: Linksys MX5500 and MR5500,
    Zyxel SCR50AXE, CMCC PZ-L8, I-O DATA WN-DAX3000GR, Elecom WRC-X3000GS2 /
-   GST2, Yuncore AX830 and AX850, AVM FRITZ!Box 4050. On those the settings apply themselves on
+   GST2, Yuncore AX830 and AX850, Lite-On WPX8324, AVM FRITZ!Box 4050. On those the settings apply themselves on
    first boot. Anything else logs a line telling you to set them by hand.
 
    The `dsa` topology needs no table entry. Besides the GL-B3000 it has run
